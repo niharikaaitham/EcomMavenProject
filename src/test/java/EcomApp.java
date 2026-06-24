@@ -9,35 +9,35 @@ import java.time.Duration;
 import java.util.List;
 
 public class EcomApp {
-    static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         String expectedTotalProducts = "50";
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://velocityecommerceproject-agarb0aagdcvd7fy.canadacentral-01.azurewebsites.net/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-        driver.findElement(By.id("tab-admin")).click();
-        driver.findElement(By.id("admin-username")).sendKeys("9923478751");
-        WebElement passwordField = driver.findElement(By.id("admin-password"));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
+        driver.findElement(By.cssSelector("#tab-admin")).click();
+        WebElement usernameField = driver.findElement(By.cssSelector("#admin-username"));
+        usernameField.sendKeys("9923478751");
+        WebElement passwordField = driver.findElement(By.cssSelector("#admin-password"));
         passwordField.sendKeys("Velocity@123");
+        Thread.sleep(4000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true)", passwordField);
-        driver.findElement(By.id("btn-admin-signin")).click(); //clicked on login button and then wait to load
-        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("#btn-admin-signin")).click();
+        Thread.sleep(4000);
 
-        String dashboardText = driver.findElement(By.xpath("//h1[contains(text(),'Dashboard Overview')]")).getText();
-        System.out.println(dashboardText);
+        WebElement totalProducts = driver.findElement(By.xpath("(//div[@class='stat-value'])[1]"));
+        WebElement totalOrders = driver.findElement(By.xpath("(//div[@class='stat-value'])[2]"));
+        WebElement lowStockItems = driver.findElement(By.xpath("(//div[@class='stat-value'])[3]"));
+        WebElement pendingOrders = driver.findElement(By.xpath("(//div[@class='stat-value'])[4]"));
+        WebElement backorders = driver.findElement(By.xpath("(//div[@class='stat-value'])[5]"));
 
-        WebElement totalProducts = driver.findElement(By.xpath("//div[@class='admin-stat-card success']"));
-        String totalOrders = driver.findElement(By.xpath("(//div[@class='admin-stat-card'])[1]")).getText();
-        String lowStockItems = driver.findElement(By.xpath("//div[@class='admin-stat-card warning']")).getText();
-        String pendingOrders = driver.findElement(By.xpath("//div[@class='admin-stat-card danger']")).getText();
-        String backOrders = driver.findElement(By.xpath("(//div[@class='admin-stat-card'])[2]")).getText();
-        System.out.println(totalProducts);
-        System.out.println(totalOrders);
-        System.out.println(lowStockItems);
-        System.out.println(pendingOrders);
-        System.out.println(backOrders);
-        //clicked on orders page
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        System.out.println("Total products are " + totalProducts.getText());
+        System.out.println("totalOrders are " + totalOrders.getText());
+        System.out.println("lowStockItems are " + lowStockItems.getText());
+        System.out.println("pendingOrders are " + pendingOrders.getText());
+        System.out.println("backorders are " + backorders.getText());
+
         System.out.println("===========================================");
         if (expectedTotalProducts.equals(totalProducts.getText())) {
             System.out.println("actual and expected total products matched, TC PASSED");

@@ -22,8 +22,9 @@ public class Utility {
         return value;
     }
     public static String readDataFromExcel(int row,int cell) throws IOException {
-        FileInputStream myFile=new FileInputStream("C:\\Users\\nihar\\Documents\\Test.xlsx");
-        String value= WorkbookFactory.create(myFile).getSheet("Sheet7").getRow(row).getCell(cell).getStringCellValue();
+        FileInputStream myFile=new FileInputStream("C:\\Users\\nihar\\OneDrive\\Documents\\Test.xlsx");
+
+        String value= WorkbookFactory.create(myFile).getSheet("Sheet8").getRow(row).getCell(cell).getStringCellValue();
         System.out.println("readDataFromExcel: "+"row- "+row+"cell- "+cell);
         return value;
     }
