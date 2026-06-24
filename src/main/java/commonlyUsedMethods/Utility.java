@@ -39,8 +39,5 @@ public class Utility {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         System.out.println("scrolling into view");
     }
-//   test
-
-
 }
 
