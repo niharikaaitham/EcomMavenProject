@@ -1,0 +1,13 @@
+<suite name="SuiteName">
+    <test name="ecomTestGroups">
+        <groups>
+            <run>
+                <exclude name="AddToWishlist"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testNGStudy.Amazon"/>
+            <class name="testNGStudy.Flipkart"/>
+        </classes>
+    </test>
+</suite>

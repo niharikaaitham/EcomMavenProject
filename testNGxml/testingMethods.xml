@@ -1,0 +1,16 @@
+<suite name="SuiteName">
+    <test name="TestName">
+        <classes>
+            <class name="testNGStudy.MethodsStudy">
+                <methods>
+                    <include name="a"/>
+                </methods>
+            </class>
+            <class name="testNGStudy.MethodsStudy1">
+                <methods>
+                    <exclude name="e"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

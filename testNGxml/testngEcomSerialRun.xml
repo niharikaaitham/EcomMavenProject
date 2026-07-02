@@ -1,0 +1,24 @@
+<suite name="Suite">
+
+    <test thread-count="5" name="AmazonTest">
+        <classes>
+            <class name="ecomTest.AmazonTest">
+            </class>
+        </classes>
+    </test>
+
+    <test thread-count="5" name="AjioTest">
+        <classes>
+            <class name="ecomTest.AjioTest">
+            </class>
+        </classes>
+    </test>
+
+    <test thread-count="5" name="FlipkartTest">
+        <classes>
+            <class name="ecomTest.FlipkartTest">
+            </class>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

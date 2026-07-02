@@ -1,0 +1,16 @@
+<suite name="SuiteName">
+    <test name="TestName">
+        <classes>
+            <class name="testNGStudy.Amazon">
+                <methods>
+<include name="azAddToWishlist"/>
+                </methods>
+            </class>
+            <class name="testNGStudy.Flipkart">
+                <methods>
+                    <exclude name="fkAddToWishlist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
