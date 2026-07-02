@@ -56,7 +56,7 @@ public class EcomApp {
             System.out.print(th.getText() + " ");
         }
         System.out.println();
-        List<WebElement> rows = driver.findElements(By.xpath("//table/tbody/tr"));
+        List<WebElement> rows = driver.findElements(By.xpath("//table//tr"));
         //System.out.println("total rows are "+rows.size());
 
         for (WebElement row : rows) {

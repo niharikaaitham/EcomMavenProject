@@ -40,9 +40,8 @@ public class EcomLoginPage {
     }
 
     public void clickOnAccessDashBoardButton(WebDriver driver) {
-        Utility.scrollIntoView(driver,accessDashboardButton);
+        Utility.scrollIntoView(driver, accessDashboardButton);
         accessDashboardButton.click();
         System.out.println("clicking on access dashboard button");
     }
-
 }

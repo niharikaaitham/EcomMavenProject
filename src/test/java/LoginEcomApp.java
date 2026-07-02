@@ -9,7 +9,6 @@ import java.time.Duration;
 
 public class LoginEcomApp {
     public static void main(String[] args) throws IOException, InterruptedException {
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://velocityecommerceproject-agarb0aagdcvd7fy.canadacentral-01.azurewebsites.net/login");
         driver.manage().window().maximize();
@@ -43,8 +42,6 @@ public class LoginEcomApp {
         } else {
             System.out.println("Total products validation failed");
         }
-
-        Utility.takeScreenshot(driver,"TC123");
-
+        Utility.takeScreenshot(driver, "TC123");
     }
 }

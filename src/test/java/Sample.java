@@ -23,6 +23,5 @@ public class Sample {
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.instagram.com/?hl=en");
         Reporter.log("launchApplication3 running",true);
-
     }
 }
